@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\xsd\0.1\Geometry.xsd">
+    <MetaData>
+        <Tool>Keyboard-v1.0</Tool>
+        <Created>2020-12-11T11:12:13</Created>
+    </MetaData>
+    <GeometryDefinitions>
+        <GeometryFileDefinition id="luminaire" filename="luminaire.obj" units="mm" />
+    </GeometryDefinitions>
+    <Structure>
+        <Geometry partName="luminaire">
+            <Position x="0" y="0" z="0" />
+            <Rotation x="0" y="0" z="0" />
+            <GeometryReference geometryId="luminaire" />
+            <LightEmittingObjects>
+                <LightEmittingObject partName="leo">
+                    <Position x="0" y="0" z="0" />
+                    <Rotation x="0" y="0" z="0" />
+                    <Circle diameter="0.1" />
+                </LightEmittingObject>
+            </LightEmittingObjects>
+            <LightEmittingFaceAssignments>
+                <RangeAssignment faceIndexBegin="1199" faceIndexEnd="1235" lightEmittingPartName="leo" />
+            </LightEmittingFaceAssignments>
+        </Geometry>
+    </Structure>
+</Luminaire>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+	<xs:element name="Luminaire" type="LuminaireDataType">
+		<xs:key name="GeometryReferenceId">
+			<xs:selector xpath="GeometryDefinitions/GeometryFileDefinition" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:keyref name="GeometrySourceFileReference" refer="GeometryReferenceId">
+			<xs:selector xpath=".//GeometryReference" />
+			<xs:field xpath="@geometryId" />
+		</xs:keyref>
+		<xs:key name="LightEmittingPartName">
+			<xs:selector xpath=".//LightEmittingObject" />
+			<xs:field xpath="@partName" />
+		</xs:key>
+		<xs:unique name="UniquePartName">
+			<xs:selector xpath=".//Geometry|.//Joint|.//LightEmittingObject" />
+			<xs:field xpath="@partName"></xs:field>
+		</xs:unique>
+		<xs:keyref name="LightEmittingPartReferenceInAssignment" refer="LightEmittingPartName">
+			<xs:selector xpath=".//Assignment" />
+			<xs:field xpath="@lightEmittingPartName" />
+		</xs:keyref>
+		<xs:keyref name="LightEmittingPartReferenceInRangeAssignment" refer="LightEmittingPartName">
+			<xs:selector xpath=".//RangeAssignment" />
+			<xs:field xpath="@lightEmittingPartName" />
+		</xs:keyref>
+	</xs:element>
+	<xs:complexType name="LuminaireDataType">
+		<xs:sequence>
+			<xs:element name="MetaData" minOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ModelName" type="xs:string" minOccurs="0" />
+						<xs:element name="Description" type="xs:string" minOccurs="0" />
+						<xs:element name="Tool" type="xs:string" minOccurs="1" />
+						<xs:element name="Created" type="xs:dateTime" minOccurs="1" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GeometryDefinitions" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="GeometryFileDefinition">
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="GeometricFileData">
+											<xs:attribute name="id" type="xs:NCName" use="required" />
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Structure">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Geometry" type="GeometryNodeType" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GeometryNodeType">
+		<xs:complexContent>
+			<xs:extension base="TransformableNodeType">
+				<xs:sequence>
+					<xs:element ref="GeometrySource" minOccurs="1" maxOccurs="1" />
+					<xs:element name="Joints" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Joint" type="JointNodeType" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="LightEmittingObjects" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="LightEmittingObject" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="LightEmittingNodeType" />
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="SensorObjects" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="SensorObject" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="TransformableNodeType" />
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="LightEmittingFaceAssignments" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="LightEmittingFaceAssignmentType" minOccurs="1" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ElectricalConnectors" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="ElectricalConnector" type="VectorType" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="PendulumConnectors" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="PendulumConnector" type="VectorType" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="excludedFromMeasurement" type="xs:boolean" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="JointNodeType">
+		<xs:complexContent>
+			<xs:extension base="TransformableNodeType">
+				<xs:sequence>
+					<xs:element name="XAxis" type="AxisRotationType" minOccurs="0" />
+					<xs:element name="YAxis" type="AxisRotationType" minOccurs="0" />
+					<xs:element name="ZAxis" type="AxisRotationType" minOccurs="0" />
+					<xs:element name="DefaultRotation" type="VectorType" minOccurs="0" maxOccurs="1" />
+					<xs:element name="Geometries" minOccurs="1" maxOccurs="1">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Geometry" type="GeometryNodeType" minOccurs="1" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="LightEmittingFaceAssignmentType" abstract="true"></xs:element>
+	<xs:element name="Assignment" substitutionGroup="LightEmittingFaceAssignmentType">
+		<xs:complexType>
+			<xs:attribute name="partIndex" type="xs:int" use="optional" />
+			<xs:attribute name="faceIndex" type="xs:int" use="required" />
+			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RangeAssignment" substitutionGroup="LightEmittingFaceAssignmentType">
+		<xs:complexType>
+			<xs:attribute name="partIndex" type="xs:int" use="optional" />
+			<xs:attribute name="faceIndexBegin" type="xs:int" use="required" />
+			<xs:attribute name="faceIndexEnd" type="xs:int" use="required" />
+			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="NodeType">
+		<xs:attribute name="partName" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="ColorType">
+		<xs:attribute name="r" type="xs:double" />
+		<xs:attribute name="g" type="xs:double" />
+		<xs:attribute name="b" type="xs:double" />
+	</xs:complexType>
+	<xs:complexType name="TransformableNodeType">
+		<xs:complexContent>
+			<xs:extension base="NodeType">
+				<xs:sequence>
+					<xs:element name="Position" type="VectorType" minOccurs="1" maxOccurs="1" />
+					<xs:element name="Rotation" type="VectorType" minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VectorType">
+		<xs:attribute name="x" type="xs:double" use="required" />
+		<xs:attribute name="y" type="xs:double" use="required" />
+		<xs:attribute name="z" type="xs:double" use="required" />
+	</xs:complexType>
+	<xs:complexType name="AxisRotationType">
+		<xs:attribute name="min" type="xs:double" use="required" />
+		<xs:attribute name="max" type="xs:double" use="required" />
+		<xs:attribute name="step" type="xs:double" use="required" />
+	</xs:complexType>
+	<xs:complexType name="LightEmittingNodeType">
+		<xs:complexContent>
+			<xs:extension base="TransformableNodeType">
+				<xs:sequence>
+					<xs:element ref="ShapeType" />
+					<xs:element name="LuminousHeights" minOccurs="0" maxOccurs="1">
+						<xs:complexType>
+							<xs:attribute name="c0" type="xs:double" use="required" />
+							<xs:attribute name="c90" type="xs:double" use="required" />
+							<xs:attribute name="c180" type="xs:double" use="required" />
+							<xs:attribute name="c270" type="xs:double" use="required" />
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ShapeType" abstract="true" />
+	<xs:element name="Circle" substitutionGroup="ShapeType">
+		<xs:complexType>
+			<xs:attribute name="diameter" type="xs:double" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Rectangle" substitutionGroup="ShapeType">
+		<xs:complexType>
+			<xs:attribute name="sizeX" type="xs:double" use="required" />
+			<xs:attribute name="sizeY" type="xs:double" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="GeometryUnitsType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="m" />
+			<xs:enumeration value="mm" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GeometryDataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="base64/obj" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GeometricFileData">
+		<xs:attribute name="filename" type="xs:string" use="required" />
+		<xs:attribute name="units" type="GeometryUnitsType" use="required" />
+	</xs:complexType>
+	<xs:element name="GeometrySource" abstract="true" />
+	<xs:element name="GeometryReference" substitutionGroup="GeometrySource">
+		<xs:complexType>
+			<xs:attribute name="geometryId" type="xs:NCName" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

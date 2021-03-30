@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\xsd\0.1\Geometry.xsd">
+    <MetaData>
+        <Tool>Keyboard-v1.0</Tool>
+        <Created>2020-12-11T11:12:13</Created>
+    </MetaData>
+    <GeometryDefinitions>
+        <GeometryFileDefinition id="luminaire" filename="luminaire.obj" units="mm" />
+    </GeometryDefinitions>
+    <Structure>
+        <Geometry partName="luminaire">
+            <Position x="0" y="0" z="-0.5" />
+            <Rotation x="0" y="0" z="0" />
+            <GeometryReference geometryId="luminaire" />
+            <LightEmittingObjects>
+                <LightEmittingObject partName="leo_top">
+                    <Position x="0" y="0" z="0.0375" />
+                    <Rotation x="180" y="0" z="90" />
+                    <Rectangle sizeX="0.15" sizeY="1" />
+                </LightEmittingObject>
+                <LightEmittingObject partName="leo_bottom">
+                    <Position x="0" y="0" z="0.0025" />
+                    <Rotation x="0" y="0" z="-90" />
+                    <Rectangle sizeX="0.17" sizeY="1.175" />
+                </LightEmittingObject>
+            </LightEmittingObjects>
+            <LightEmittingFaceAssignments>
+                <Assignment faceIndex="90" lightEmittingPartName="leo_bottom" />
+                <Assignment faceIndex="91" lightEmittingPartName="leo_bottom" />
+                <Assignment faceIndex="84" lightEmittingPartName="leo_top" />
+                <Assignment faceIndex="85" lightEmittingPartName="leo_top" />
+            </LightEmittingFaceAssignments>
+            <ElectricalConnectors>
+                <ElectricalConnector x="-0.575" y="0" z="0.04" />
+            </ElectricalConnectors>
+            <PendulumConnectors>
+                <PendulumConnector x="-0.55" y="0" z="0.04" />
+                <PendulumConnector x="0.55" y="0" z="0.04" />
+            </PendulumConnectors>
+        </Geometry>
+    </Structure>
+</Luminaire>

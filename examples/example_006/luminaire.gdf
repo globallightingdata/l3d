@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/0.1/Geometry.xsd">
+    <MetaData>
+        <Tool>Experimental</Tool>
+        <Created>2021-01-15T15:55:13</Created>
+    </MetaData>
+    <GeometryDefinitions>
+        <GeometryFileDefinition id="base" filename="base.obj" units="m" />
+        <GeometryFileDefinition id="base-head-con" filename="base-head-con.obj" units="m" />
+        <GeometryFileDefinition id="head" filename="head.obj" units="m" />
+    </GeometryDefinitions>
+    <Structure>
+        <Geometry partName="base">
+            <Position x="0" y="0" z="0" />
+            <Rotation x="0" y="0" z="0" />
+            <GeometryReference geometryId="base" />
+            <Joints>
+                <Joint partName="part-joint-0">
+                    <Position x="0" y="-0.55" z="-0.017" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <Geometries>
+                        <Geometry partName="part-0">
+                            <Position x="0" y="0" z="0" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-0">
+                                    <Position x="0" y="0" z="-0.128" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <YAxis min="-30" max="65" step="1" />
+                                    <Geometries>
+                                        <Geometry partName="head-0">
+                                            <Position x="0" y="0" z="0" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="leo-0">
+                                                    <Position x="0.045" y="-0.043" z="0" />
+                                                    <Rotation x="0" y="-90" z="0" />
+                                                    <Circle diameter="0.1" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-0" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+                <Joint partName="part-joint-1">
+                    <Position x="0" y="-0.15" z="-0.017" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <Geometries>
+                        <Geometry partName="part-1">
+                            <Position x="0" y="0" z="0" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-1">
+                                    <Position x="0" y="0" z="-0.128" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <YAxis min="-30" max="65" step="1" />
+                                    <Geometries>
+                                        <Geometry partName="head-1">
+                                            <Position x="0" y="0" z="0" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="leo-1">
+                                                    <Position x="0.045" y="-0.043" z="0" />
+                                                    <Rotation x="0" y="-90" z="0" />
+                                                    <Circle diameter="0.1" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-1" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+                <Joint partName="part-joint-2">
+                    <Position x="0" y="0.25" z="-0.017" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <Geometries>
+                        <Geometry partName="part-2">
+                            <Position x="0" y="0" z="0" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-2">
+                                    <Position x="0" y="0" z="-0.128" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <YAxis min="-30" max="65" step="1" />
+                                    <Geometries>
+                                        <Geometry partName="head-2">
+                                            <Position x="0" y="0" z="0" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="leo-2">
+                                                    <Position x="0.045" y="-0.043" z="0" />
+                                                    <Rotation x="0" y="-90" z="0" />
+                                                    <Circle diameter="0.1" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-2" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+                <Joint partName="part-joint-3">
+                    <Position x="0" y="0.65" z="-0.017" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <Geometries>
+                        <Geometry partName="part-3">
+                            <Position x="0" y="0" z="0" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-3">
+                                    <Position x="0" y="0" z="-0.128" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <YAxis min="-30" max="65" step="1" />
+                                    <Geometries>
+                                        <Geometry partName="head-3">
+                                            <Position x="0" y="0" z="0" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="leo-3">
+                                                    <Position x="0.045" y="-0.043" z="0" />
+                                                    <Rotation x="0" y="-90" z="0" />
+                                                    <Circle diameter="0.1" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-3" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+            </Joints>
+        </Geometry>
+    </Structure>
+</Luminaire>

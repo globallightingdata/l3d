@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/0.1/Geometry.xsd">
+    <MetaData>
+        <Tool>Experimental</Tool>
+        <Created>2021-02-16T15:55:13</Created>
+    </MetaData>
+    <GeometryDefinitions>
+        <GeometryFileDefinition id="base" filename="base.obj" units="mm" />
+        <GeometryFileDefinition id="base-head-con" filename="base-head-con.obj" units="mm" />
+        <GeometryFileDefinition id="head" filename="head.obj" units="mm" />
+    </GeometryDefinitions>
+    <Structure>
+        <Geometry partName="base">
+            <Position x="0" y="0" z="0" />
+            <Rotation x="0" y="0" z="0" />
+            <GeometryReference geometryId="base" />
+            <Joints>
+                <Joint partName="base-head-con-joint-0">
+                    <Position x="-0.4" y="0" z="0.0375" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <DefaultRotation x="0" y="0" z="0" />
+                    <Geometries>
+                        <Geometry partName="base-head-con-0">
+                            <Position x="0.4" y="0" z="-0.0375" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-0">
+                                    <Position x="-0.4" y="0" z="0.0375" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <XAxis min="-45" max="45" step="1" />
+                                    <DefaultRotation x="0" y="0" z="0" />
+                                    <Geometries>
+                                        <Geometry partName="head-0">
+                                            <Position x="0.4" y="0" z="-0.0375" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="LEO0">
+                                                    <Position x="-0.4" y="0" z="0.01" />
+                                                    <Rotation x="0" y="0" z="0" />
+                                                    <Circle diameter="0.0575" />
+                                                    <LuminousHeights c0="10" c90="10" c180="10" c270="10" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="574" faceIndexEnd="607" lightEmittingPartName="LEO0" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+                <Joint partName="base-head-con-joint-1">
+                    <Position x="0.4" y="0" z="0.0375" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-180" max="180" step="1" />
+                    <DefaultRotation x="0" y="0" z="0" />
+                    <Geometries>
+                        <Geometry partName="base-head-con-1">
+                            <Position x="0.4" y="0" z="-0.0375" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-head-con" />
+                            <Joints>
+                                <Joint partName="head-joint-1">
+                                    <Position x="-0.4" y="0" z="0.0375" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <XAxis min="-45" max="45" step="1" />
+                                    <DefaultRotation x="0" y="0" z="0" />
+                                    <Geometries>
+                                        <Geometry partName="head-1">
+                                            <Position x="0.4" y="0" z="-0.0375" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="head" />
+                                            <LightEmittingObjects>
+                                                <LightEmittingObject partName="LEO1">
+                                                    <Position x="-0.4" y="0" z="0.01" />
+                                                    <Rotation x="0" y="0" z="0" />
+                                                    <Circle diameter="0.0575" />
+                                                    <LuminousHeights c0="10" c90="10" c180="10" c270="10" />
+                                                </LightEmittingObject>
+                                            </LightEmittingObjects>
+                                            <LightEmittingFaceAssignments>
+                                                <RangeAssignment faceIndexBegin="574" faceIndexEnd="607" lightEmittingPartName="LEO1" />
+                                            </LightEmittingFaceAssignments>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+            </Joints>
+            <SensorObjects>
+                <SensorObject partName="Sensor">
+                    <Position x="0" y="0" z="0" />
+                    <Rotation x="0" y="0" z="0" />
+                </SensorObject>
+            </SensorObjects>
+        </Geometry>
+    </Structure>
+</Luminaire>
