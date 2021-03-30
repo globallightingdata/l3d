@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\xsd\0.1\Geometry.xsd">
+    <MetaData>
+        <ModelName>First example</ModelName>
+        <Description>First ever xml luminaire geometry description</Description>
+        <Tool>Keyboard-v1.0</Tool>
+        <Created>2020-12-03T16:33:44</Created>
+    </MetaData>
+    <GeometryDefinitions>
+        <GeometryFileDefinition id="base" filename="base.obj" units="mm" />
+        <GeometryFileDefinition id="base-arm-con" filename="base-arm-con.obj" units="mm" />
+        <GeometryFileDefinition id="arm" filename="arm.obj" units="mm" />
+        <GeometryFileDefinition id="arm-head-con" filename="arm-head-con.obj" units="mm" />
+        <GeometryFileDefinition id="head" filename="head.obj" units="mm" />
+    </GeometryDefinitions>
+    <Structure>
+        <Geometry partName="base">
+            <Position x="0" y="0" z="0" />
+            <Rotation x="0" y="0" z="0" />
+            <GeometryReference geometryId="base" />
+            <Joints>
+                <Joint partName="base-con-hinge">
+                    <Position x="0" y="0.05" z="0.05" />
+                    <Rotation x="0" y="0" z="0" />
+                    <ZAxis min="-15" max="15" step="1" />
+                    <Geometries>
+                        <Geometry partName="base-arm-con">
+                            <Position x="0" y="-0.05" z="-0.05" />
+                            <Rotation x="0" y="0" z="0" />
+                            <GeometryReference geometryId="base-arm-con" />
+                            <Joints>
+                                <Joint partName="con-arm-hinge">
+                                    <Position x="0" y="0.05" z="0.085" />
+                                    <Rotation x="0" y="0" z="0" />
+                                    <XAxis min="0" max="60" step="1" />
+                                    <DefaultRotation x="30" y="0" z="0" />
+                                    <Geometries>
+                                        <Geometry partName="arm">
+                                            <Position x="0" y="-0.05" z="-0.085" />
+                                            <Rotation x="0" y="0" z="0" />
+                                            <GeometryReference geometryId="arm" />
+                                            <Joints>
+                                                <Joint partName="arm-con-hinge">
+                                                    <Position x="0" y="0.05" z="0.485" />
+                                                    <Rotation x="90" y="0" z="0" />
+                                                    <XAxis min="-60" max="0" step="1" />
+                                                    <DefaultRotation x="-30" y="0" z="0" />
+                                                    <Geometries>
+                                                        <Geometry partName="arm-head-con">
+                                                            <Position x="0" y="-0.05" z="-0.485" />
+                                                            <Rotation x="0" y="0" z="0" />
+                                                            <GeometryReference geometryId="arm-head-con" />
+                                                            <Joints>
+                                                                <Joint partName="con-head-hinge">
+                                                                    <Position x="0" y="0.05" z="0.525" />
+                                                                    <Rotation x="0" y="0" z="0" />
+                                                                    <ZAxis min="-15" max="15" step="1" />
+                                                                    <Geometries>
+                                                                        <Geometry partName="head" excludedFromMeasurement="true">
+                                                                            <Position x="0" y="-0.05" z="-0.525" />
+                                                                            <Rotation x="0" y="0" z="0" />
+                                                                            <GeometryReference geometryId="head" />
+                                                                            <LightEmittingObjects>
+                                                                                <LightEmittingObject partName="leo">
+                                                                                    <Position x="0" y="0.04631" z="0.6771" />
+                                                                                    <Rotation x="90" y="0" z="180" />
+                                                                                    <Rectangle sizeX="0.18" sizeY="0.08" />
+                                                                                </LightEmittingObject>
+                                                                            </LightEmittingObjects>
+                                                                            <LightEmittingFaceAssignments>
+                                                                                <Assignment faceIndex="16" lightEmittingPartName="leo" />
+                                                                                <Assignment faceIndex="17" lightEmittingPartName="leo" />
+                                                                                <Assignment faceIndex="18" lightEmittingPartName="leo" />
+                                                                                <RangeAssignment faceIndexBegin="19" faceIndexEnd="21" lightEmittingPartName="leo" />
+                                                                            </LightEmittingFaceAssignments>
+                                                                        </Geometry>
+                                                                    </Geometries>
+                                                                </Joint>
+                                                            </Joints>
+                                                        </Geometry>
+                                                    </Geometries>
+                                                </Joint>
+                                            </Joints>
+                                        </Geometry>
+                                    </Geometries>
+                                </Joint>
+                            </Joints>
+                        </Geometry>
+                    </Geometries>
+                </Joint>
+            </Joints>
+        </Geometry>
+    </Structure>
+</Luminaire>
