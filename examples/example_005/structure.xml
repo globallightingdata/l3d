@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\xsd\0.1\Geometry.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/master/xsd/l3d.xsd">
     <MetaData>
         <ModelName>Another example</ModelName>
         <Description>Example luminaire 4</Description>

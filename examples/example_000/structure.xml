@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/master/xsd/l3d.xsd">
 	<MetaData>
 		<Tool>Example-Tool</Tool>
 		<Created>2021-03-03T10:10:10</Created>
@@ -9,12 +9,12 @@
 	</GeometryDefinitions>
 	<Structure>
 		<Geometry partName="luminaire">
-			<Position x="-0.25" y="-0.125" z="0.05" />
+			<Position x="0" y="0" z="0" />
 			<Rotation x="0" y="0" z="0" />
 			<GeometryReference geometryId="cube" />
 			<LightEmittingObjects>
 				<LightEmittingObject partName="leo">
-					<Position x="0.25" y="0.125" z="-0.05" />
+					<Position x="0" y="0" z="0" />
 					<Rotation x="0" y="0" z="0" />
 					<Rectangle sizeX="0.5" sizeY="0.25" />
 				</LightEmittingObject>
