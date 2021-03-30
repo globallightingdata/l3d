@@ -82,7 +82,7 @@ Contains some meta-information about the model and how it has been created.
 - `Description`
   Some text as model description. May appear once.
 
-### **`GeometryDefiniftions`**
+### **`GeometryDefinitions`**
 
 References all model files which are used in this luminaire geometry.
 
