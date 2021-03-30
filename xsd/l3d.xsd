@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
 	<xs:element name="Luminaire" type="LuminaireDataType">
 		<xs:key name="GeometryReferenceId">
 			<xs:selector xpath="GeometryDefinitions/GeometryFileDefinition" />
