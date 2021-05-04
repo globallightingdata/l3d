@@ -331,8 +331,7 @@ The following example xml creates exactly what we want.
         </LightEmittingObject>
       </LightEmittingObjects>
       <LightEmittingFaceAssignments>
-        <Assignment faceIndex="6" lightEmittingPartName="leo" />
-        <Assignment faceIndex="7" lightEmittingPartName="leo" />
+        <Assignment faceIndex="3" lightEmittingPartName="leo" />
       </LightEmittingFaceAssignments>
     </Geometry>
   </Structure>
@@ -405,8 +404,7 @@ The xml below contains these adjustments.
         </LightEmittingObject>
       </LightEmittingObjects>
       <LightEmittingFaceAssignments>
-        <Assignment faceIndex="6" lightEmittingPartName="leo" />
-        <Assignment faceIndex="7" lightEmittingPartName="leo" />
+        <Assignment faceIndex="3" lightEmittingPartName="leo" />
       </LightEmittingFaceAssignments>
     </Geometry>
   </Structure>
