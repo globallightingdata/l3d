@@ -165,7 +165,7 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="NodeType">
-		<xs:attribute name="partName" type="xs:string" use="required" />
+		<xs:attribute name="partName" type="xs:NCName" use="required" />
 	</xs:complexType>
 	<xs:complexType name="ColorType">
 		<xs:attribute name="r" type="xs:double" />
