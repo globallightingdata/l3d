@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/master/xsd/l3d.xsd">
-    <MetaData>
-        <ModelName>First example</ModelName>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+    <Header>
+        <Name>First example</Name>
         <Description>First ever xml luminaire geometry description</Description>
-        <Tool>Keyboard-v1.0</Tool>
-        <Created>2020-12-03T16:33:44</Created>
-    </MetaData>
+        <CreatedWithApplication>Keyboard-v1.0</CreatedWithApplication>
+        <CreationTimeCode>2020-12-03T16:33:44</CreationTimeCode>
+    </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="base" filename="base.obj" units="mm" />
         <GeometryFileDefinition id="base-arm-con" filename="base-arm-con.obj" units="mm" />

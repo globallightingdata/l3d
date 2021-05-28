@@ -58,21 +58,21 @@ The Root-Element in the xml file. Must appear exactly once.
 
 #### Child elements
 
-- [**`MetaData`**](#MetaData) (mandatory)
+- [**`Header`**](#Header) (mandatory)
 - [**`GeometryDefinitions`**](#GeometryFileDefinition) (mandatory)
 - [**`Structure`**](#Structure) (mandatory)
 
-### **`MetaData`**
+### **`Header`**
 
 Contains some meta-information about the model and how it has been created.
 
 #### Child elements
 
-- **`Tool`** (mandatory)  
+- **`CreatedWithApplication`** (mandatory)  
   The tool/software which was used to create this xml file. Must appear once.
-- **`Created`** (mandatory)
+- **`CreationTimeCode`** (mandatory)
   The date of the creation in format YYYY-MM-DDThh:mm:ss. Must appear once.
-- `ModelName`
+- `Name`
   If there is a distinct name for this model, this can be mentioned here. May appear once.
 - `Description`
   Some text as model description. May appear once.
@@ -306,10 +306,10 @@ The following example xml creates exactly what we want.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/l3d.xsd">
-  <MetaData>
-    <Tool>Example-Tool</Tool>
-    <Created>2021-03-03T10:10:10</Created>
-  </MetaData>
+  <Header>
+    <CreatedWithApplication>Example-Tool</CreatedWithApplication>
+    <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+  </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
   </GeometryDefinitions>
@@ -379,10 +379,10 @@ The xml below contains these adjustments.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/l3d.xsd">
-  <MetaData>
-    <Tool>Example-Tool</Tool>
-    <Created>2021-03-03T10:10:10</Created>
-  </MetaData>
+  <Header>
+    <CreatedWithApplication>Example-Tool</CreatedWithApplication>
+    <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+  </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
   </GeometryDefinitions>
