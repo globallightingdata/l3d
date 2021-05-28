@@ -28,13 +28,13 @@
 	</xs:element>
 	<xs:complexType name="LuminaireDataType">
 		<xs:sequence>
-			<xs:element name="MetaData" minOccurs="1">
+			<xs:element name="Header" minOccurs="1">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="ModelName" type="xs:string" minOccurs="0" />
+						<xs:element name="Name" type="xs:string" minOccurs="0" />
 						<xs:element name="Description" type="xs:string" minOccurs="0" />
-						<xs:element name="Tool" type="xs:string" minOccurs="1" />
-						<xs:element name="Created" type="xs:dateTime" minOccurs="1" />
+						<xs:element name="CreatedWithApplication" type="xs:string" minOccurs="1" />
+						<xs:element name="CreationTimeCode" type="xs:dateTime" minOccurs="1" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
