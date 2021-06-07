@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/master/xsd/l3d.xsd">
-	<MetaData>
-		<Tool>Example-Tool</Tool>
-		<Created>2021-03-03T10:10:10</Created>
-	</MetaData>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+	<Header>
+		<CreatedWithApplication>Example-Tool</CreatedWithApplication>
+		<CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+	</Header>
 	<GeometryDefinitions>
 		<GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
 	</GeometryDefinitions>
@@ -20,8 +20,7 @@
 				</LightEmittingObject>
 			</LightEmittingObjects>
 			<LightEmittingFaceAssignments>
-				<Assignment faceIndex="6" lightEmittingPartName="leo" />
-				<Assignment faceIndex="7" lightEmittingPartName="leo" />
+				<Assignment faceIndex="3" lightEmittingPartName="leo" />
 			</LightEmittingFaceAssignments>
 		</Geometry>
 	</Structure>

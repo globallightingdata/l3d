@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/master/xsd/l3d.xsd">
-    <MetaData>
-        <Tool>Keyboard-v1.0</Tool>
-        <Created>2020-12-11T11:12:13</Created>
-    </MetaData>
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+    <Header>
+        <CreatedWithApplication>Keyboard-v1.0</CreatedWithApplication>
+        <CreationTimeCode>2020-12-11T11:12:13</CreationTimeCode>
+    </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="luminaire" filename="luminaire.obj" units="mm" />
     </GeometryDefinitions>
