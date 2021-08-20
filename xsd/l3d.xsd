@@ -151,14 +151,14 @@
 	<xs:element name="LightEmittingFaceAssignmentType" abstract="true"></xs:element>
 	<xs:element name="Assignment" substitutionGroup="LightEmittingFaceAssignmentType">
 		<xs:complexType>
-			<xs:attribute name="partIndex" type="xs:int" use="optional" />
+			<xs:attribute name="groupIndex" type="xs:int" use="optional" />
 			<xs:attribute name="faceIndex" type="xs:int" use="required" />
 			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="RangeAssignment" substitutionGroup="LightEmittingFaceAssignmentType">
 		<xs:complexType>
-			<xs:attribute name="partIndex" type="xs:int" use="optional" />
+			<xs:attribute name="groupIndex" type="xs:int" use="optional" />
 			<xs:attribute name="faceIndexBegin" type="xs:int" use="required" />
 			<xs:attribute name="faceIndexEnd" type="xs:int" use="required" />
 			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
