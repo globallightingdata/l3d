@@ -59,7 +59,7 @@ The Root-Element in the xml file. Must appear exactly once.
 #### Child elements
 
 - [**`Header`**](#Header) (mandatory)
-- [**`GeometryDefinitions`**](#GeometryFileDefinition) (mandatory)
+- [**`GeometryDefinitions`**](#GeometryDefinitions) (mandatory)
 - [**`Structure`**](#Structure) (mandatory)
 
 ### **`Header`**
@@ -96,7 +96,7 @@ References a model file in the models directory.
   A unique id, which must start with a letter and contain only letters and digits.
 - **`filename`** (mandatory)  
   The name of a file in the models directory.
-- **`unit`** (mandatory)  
+- **`units`** (mandatory)  
   The units used in the referenced model file.
 
 ### **`Structure`**
