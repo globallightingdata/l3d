@@ -129,8 +129,8 @@ A single geometry part of the luminaire.
   Contains all joint in the current geometry part. May appear exactly once. Each joint is represented by a child [**`Joint`**](#Joint) element.
 - **`LightEmittingObjects`**  
   Contains all light emitting object of the current geometry part. Has to appear exactly once. Each light emitting object is represented by a [**`LightEmittingObject`**](#LightEmittingObject) element
-- **`LightEmittingFaceAssignments`**
-  Contains assignments to triangles of the referenced .obj-File which should be displayed as light emitting surfaces. The assignments can be done via the [**`Assignment`**](#Assignment) or the [**`RangeAssignment`**](#RangeAssignment) elements.
+- **`LightEmittingSurfaces`**  
+  Contains all light emitting surface definitions in this geometry object. Each light emitting surface is represented by a [**`LightEmittingSurface`**](#LightEmittingSurface) element.
 
 ### **`GeometryReference`**
 
@@ -193,11 +193,11 @@ Enables and describes the degrees of freedom for the corresponding axis. The res
 #### Attributes
 
 - **`Min`** (mandatory)  
-The minimal angle for the joint **in degrees**.
+  The minimal angle for the joint **in degrees**.
 - **`Max`** (mandatory)  
   The maximal angle for the joint **in degrees**.
 - **`Step`** (mandatory)  
-The angle step (**in degrees**) in which the joint can be articulated.
+  The angle step (**in degrees**) in which the joint can be articulated.
 
 ### **`DefaultRotation`**
 
@@ -259,32 +259,63 @@ Describes a circular shape.
 - **`diameter`** (mandatory)  
   The diameter of the circle **in meters**.
 
-### **`Assignment`**
+### **`LightEmittingSurface`**
+
+Describes the relation between [**`LightEmittingObject`s**](#LightEmittingObject) and the faces of the parent geometry model which should act as light emitting surfaces.
+
+#### Attributes
+
+- **`partName`** (mandatory)  
+  A user defined name of the part. Must be unique throughout all luminaire parts
+
+#### Child elements
+
+- [**`LightEmittingObjectReference`**](#LightEmittingObjectReference) (mandatory)  
+  Refernce to a defined [**`LightEmittingObject`**](#LightEmittingObject). Must appear at least once.
+
+### **`LightEmittingObjectReference`**
+
+Defines a relation to an existing `LightEmittingObject`
+
+#### Attributes
+
+- **`lightEmittingPartName`** (mandatory)  
+  Contains the `partName` of an defined `LightEmittingObject`
+- **`intensity`**  
+  The intensity of the light emitting surface at which the surface should _glow_.
+
+#### Child elements
+
+- [**`FaceAssignments`**](#FaceAssignments) (mandatory)  
+  Contains all face assignments. Must appear exactly once.
+
+### **`FaceAssignments`**
+
+Contains a series of [**`FaceAssignment`**](#faceassignment) or [**`FaceRangeAssignment`**](#facerangeassignment) elements
+
+### **`FaceAssignment`**
 
 Assigns a surface/triangle in the model to act as a light emitting surface.
+
 #### Attributes
 
 - **`faceIndex`** (mandatory)  
   The zero based index of the surface/triangle in the model.
-- **`lightEmittingPartName`** (mandatory)  
-  The `partName` of the `LightEmittingObject` the surface/triangle should be related to.
 - **`groupIndex`**  
   If the model contains more than one group, this attribute can be used to indicate which group the surface/triangle index belongs to.
 
-### **`RangeAssignment`**
+### **`FaceRangeAssignment`**
 
-Assigns multiple surfaces/triangles in the model to act as light emitting surfaces. The indices of the surfaces/triangles must be successive in order to use `RangeAssignment`
+Assigns multiple surfaces/triangles in the model to act as light emitting surfaces. The indices of the surfaces/triangles must be successive in order to use `FaceRangeAssignment`
 
 #### Attributes
 
 - **`faceIndexBegin`** (mandatory)  
-The starting index which should be assigned. Must be lower than `faceIndexEnd`.
+  The starting index which should be assigned. Must be lower than `faceIndexEnd`.
 - **`faceIndexEnd`** (mandatory)
-The last index which should be assigned. Must be greater than `faceIndexBegin`.
-- **`lightEmittingPartName`** (mandatory)  
-The `partName` of the `LightEmittingObject` the surface/triangle should be related to.
+  The last index which should be assigned. Must be greater than `faceIndexBegin`.
 - **`groupIndex`**  
-If the model contains more than one face group, this attribute can be used to indicate which group the surface/triangle index belongs to.
+  If the model contains more than one face group, this attribute can be used to indicate which group the surface/triangle index belongs to.
 
 ## Examples
 
@@ -325,9 +356,14 @@ The following example xml creates exactly what we want.
           <Rectangle sizeX="0.5" sizeY="0.25" />
         </LightEmittingObject>
       </LightEmittingObjects>
-      <LightEmittingFaceAssignments>
-        <Assignment faceIndex="3" lightEmittingPartName="leo" />
-      </LightEmittingFaceAssignments>
+      <LightEmittingSurfaces>
+        <LightEmittingSurface partName="les">
+          <LightEmittingObjectReference lightEmittingPartName="leo" />
+          <FaceAssignments>
+            <FaceAssignment faceIndex="3" />
+          </FaceAssignments>
+        </LightEmittingSurface>
+      </LightEmittingSurfaces>
     </Geometry>
   </Structure>
 </Luminaire>
@@ -335,13 +371,13 @@ The following example xml creates exactly what we want.
 
 #### Cube Geometry
 
-To reference the `cube.obj` file in the models directory, we need to create a [**`GeometryFileDefinition`**](#GeometryFileDefinition) in the `GeometryFileDefinitions` element and set the attributes. The **`id`** attribute can freely be chosen but must start with a letter and must be unique among all **`GeometryFileDefinition`** elements in the XML file. The **`filename`** has to be `cube.obj` without the models directory path. Sinse the `cube.obj` file coordinates are in meters, we neet to set the **`units`** attribute to **m**.  
+To reference the `cube.obj` file in the models directory, we need to create a [**`GeometryFileDefinition`**](#GeometryFileDefinition) in the `GeometryFileDefinitions` element and set the attributes. The **`id`** attribute can freely be chosen but must start with a letter and must be unique among all **`GeometryFileDefinition`** elements in the XML file. The **`filename`** has to be `cube.obj` without the models directory path. Sinse the `cube.obj` file coordinates are in meters, we neet to set the **`units`** attribute to **m**.
 
 After that we can create a [**`Geometry`**](#Geometry) element in the [**`Structure`**](#Structure) element. The **`partName`** also can be chosen freely but must be unique among all [**`Geometry`**](#Geometry), [**`Joint`**](#Joint) and [**`LightEmittingObject`**](#LightEmittingObject) elements, and must also start with a letter.
 
 As we see the cube is already placed correctly, so we don't need any translation or rotation of the geometry in this example.
 
-To tell that this geometry element has to use the `cube.obj` as gometry source, we need to create a reference to the defined [**`GeometryFileDefinition`**](#GeometryFileDefinition). We do that by creating a [**`GeometryReference`**](#GeometryReference) element and set the **`geometryId`** attribute to the id we defined in the **`GeometryFileDefinition`** - *cube*.
+To tell that this geometry element has to use the `cube.obj` as gometry source, we need to create a reference to the defined [**`GeometryFileDefinition`**](#GeometryFileDefinition). We do that by creating a [**`GeometryReference`**](#GeometryReference) element and set the **`geometryId`** attribute to the id we defined in the **`GeometryFileDefinition`** - _cube_.
 
 #### Light Emitting Object
 
@@ -357,7 +393,7 @@ As the last step we have to indicate which of the cube surfaces/triangles should
 
 To indicate that this two triangle should act as light emitting surface we need to create a **`LightEmittingFaceAssignments`** element with two **`Assignment`** child elements. Each for every triangle. The **`Assignment`** element needs the attributes **`faceIndex`** and **`lightEmittingPartName`**. **`faceIndex`** is the (zero based) triangle index in the model and the **`lightEmittingPartName`** is **`partName`** of the **`LightEmittingObject`** element this light emitting surface is related to.
 
-In case you have many successive triangle indices you could also use the **`RangeAssignment`** element, which takes the attributes **`faceIndexBegin`** and **`faceIndexEnd`** instead of a single **`faceIndex`**.
+In case you have many successive triangle indices you could also use the **`FaceRangeAssignment`** element, which takes the attributes **`faceIndexBegin`** and **`faceIndexEnd`** instead of a single **`faceIndex`**.
 
 ### Example 2: Cube Luminaire With Translated Parts (example_001)
 
@@ -398,9 +434,14 @@ The xml below contains these adjustments.
           <Rectangle sizeX="0.5" sizeY="0.25" />
         </LightEmittingObject>
       </LightEmittingObjects>
-      <LightEmittingFaceAssignments>
-        <Assignment faceIndex="3" lightEmittingPartName="leo" />
-      </LightEmittingFaceAssignments>
+      <LightEmittingSurfaces>
+        <LightEmittingSurface partName="les">
+          <LightEmittingObjectReference lightEmittingPartName="leo" />
+          <FaceAssignments>
+            <FaceAssignment faceIndex="3" />
+          </FaceAssignments>
+        </LightEmittingSurface>
+      </LightEmittingSurfaces>
     </Geometry>
   </Structure>
 </Luminaire>
@@ -412,4 +453,4 @@ As we know the cube is not placed as we want it, so we need to correct that by m
 
 #### Light Emitting Object
 
-Initially the light emitting object will be placed relative to the parent geometry part. In this [example](#Example-2-cube) the initial position would be in the corner of the cube (zero position), which is not what we want. In order to correct that we need to move the light emitting object to the correct position. Coincidentally the values to move the light emitting object are the negative values of the values we used for the  geometry position.
+Initially the light emitting object will be placed relative to the parent geometry part. In this [example](#Example-2-cube) the initial position would be in the corner of the cube (zero position), which is not what we want. In order to correct that we need to move the light emitting object to the correct position. Coincidentally the values to move the light emitting object are the negative values of the values we used for the geometry position.
