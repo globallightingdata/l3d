@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
 	<Header>
 		<CreatedWithApplication>Example-Tool</CreatedWithApplication>
 		<CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
@@ -19,9 +19,14 @@
 					<Rectangle sizeX="0.5" sizeY="0.25" />
 				</LightEmittingObject>
 			</LightEmittingObjects>
-			<LightEmittingFaceAssignments>
-				<Assignment faceIndex="3" lightEmittingPartName="leo" />
-			</LightEmittingFaceAssignments>
+			<LightEmittingSurfaces>
+				<LightEmittingSurface partName="les">
+					<LightEmittingObjectReference lightEmittingPartName="leo" />
+					<FaceAssignments>
+						<FaceAssignment faceIndex="3" />
+					</FaceAssignments>
+				</LightEmittingSurface>
+			</LightEmittingSurfaces>
 		</Geometry>
 	</Structure>
 </Luminaire>

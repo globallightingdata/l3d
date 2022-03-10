@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
     <Header>
         <CreatedWithApplication>Keyboard-v1.0</CreatedWithApplication>
         <CreationTimeCode>2020-12-11T11:12:13</CreationTimeCode>
@@ -24,12 +24,22 @@
                     <Rectangle sizeX="0.17" sizeY="1.175" />
                 </LightEmittingObject>
             </LightEmittingObjects>
-            <LightEmittingFaceAssignments>
-                <Assignment faceIndex="90" lightEmittingPartName="leo_bottom" />
-                <Assignment faceIndex="91" lightEmittingPartName="leo_bottom" />
-                <Assignment faceIndex="84" lightEmittingPartName="leo_top" />
-                <Assignment faceIndex="85" lightEmittingPartName="leo_top" />
-            </LightEmittingFaceAssignments>
+            <LightEmittingSurfaces>
+                <LightEmittingSurface partName="les_bottom">
+                    <LightEmittingObjectReference lightEmittingPartName="leo_bottom" />
+                    <FaceAssignments>
+                        <FaceAssignment faceIndex="90" />
+                        <FaceAssignment faceIndex="91" />
+                    </FaceAssignments>
+                </LightEmittingSurface>
+                <LightEmittingSurface partName="les_top">
+                    <LightEmittingObjectReference lightEmittingPartName="leo_top" />
+                    <FaceAssignments>
+                        <FaceAssignment faceIndex="84" />
+                        <FaceAssignment faceIndex="85" />
+                    </FaceAssignments>
+                </LightEmittingSurface>
+            </LightEmittingSurfaces>
             <ElectricalConnectors>
                 <ElectricalConnector x="-0.575" y="0" z="0.04" />
             </ElectricalConnectors>

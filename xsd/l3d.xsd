@@ -17,12 +17,8 @@
 			<xs:selector xpath=".//Geometry|.//Joint|.//LightEmittingObject" />
 			<xs:field xpath="@partName"></xs:field>
 		</xs:unique>
-		<xs:keyref name="LightEmittingPartReferenceInAssignment" refer="LightEmittingPartName">
-			<xs:selector xpath=".//Assignment" />
-			<xs:field xpath="@lightEmittingPartName" />
-		</xs:keyref>
-		<xs:keyref name="LightEmittingPartReferenceInRangeAssignment" refer="LightEmittingPartName">
-			<xs:selector xpath=".//RangeAssignment" />
+		<xs:keyref name="LightEmittingPartReferenceInLightEmittingSurface" refer="LightEmittingPartName">
+			<xs:selector xpath=".//LightEmittingObjectReference" />
 			<xs:field xpath="@lightEmittingPartName" />
 		</xs:keyref>
 	</xs:element>
@@ -102,10 +98,16 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="LightEmittingFaceAssignments" minOccurs="0">
+					<xs:element name="LightEmittingSurfaces" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
-								<xs:element ref="LightEmittingFaceAssignmentType" minOccurs="1" maxOccurs="unbounded" />
+								<xs:element name="LightEmittingSurface" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="LightEmittingSurfaceNodeType" />
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
@@ -149,19 +151,17 @@
 	</xs:complexType>
 
 	<xs:element name="LightEmittingFaceAssignmentType" abstract="true"></xs:element>
-	<xs:element name="Assignment" substitutionGroup="LightEmittingFaceAssignmentType">
+	<xs:element name="FaceAssignment" substitutionGroup="LightEmittingFaceAssignmentType">
 		<xs:complexType>
 			<xs:attribute name="groupIndex" type="xs:int" use="optional" />
 			<xs:attribute name="faceIndex" type="xs:int" use="required" />
-			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="RangeAssignment" substitutionGroup="LightEmittingFaceAssignmentType">
+	<xs:element name="FaceRangeAssignment" substitutionGroup="LightEmittingFaceAssignmentType">
 		<xs:complexType>
 			<xs:attribute name="groupIndex" type="xs:int" use="optional" />
 			<xs:attribute name="faceIndexBegin" type="xs:int" use="required" />
 			<xs:attribute name="faceIndexEnd" type="xs:int" use="required" />
-			<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="NodeType">
@@ -203,6 +203,27 @@
 							<xs:attribute name="c90" type="xs:double" use="required" />
 							<xs:attribute name="c180" type="xs:double" use="required" />
 							<xs:attribute name="c270" type="xs:double" use="required" />
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LightEmittingSurfaceNodeType">
+		<xs:complexContent>
+			<xs:extension base="NodeType">
+				<xs:sequence>
+					<xs:element name="LightEmittingObjectReference" minOccurs="1" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="lightEmittingPartName" type="xs:NCName" use="required" />
+							<xs:attribute name="intensity" type="xs:double" use="optional" />
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="FaceAssignments">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="LightEmittingFaceAssignmentType" minOccurs="1" maxOccurs="unbounded" />
+							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
 				</xs:sequence>

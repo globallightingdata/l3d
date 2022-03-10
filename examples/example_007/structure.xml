@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
     <Header>
         <CreatedWithApplication>Experimental</CreatedWithApplication>
         <CreationTimeCode>2021-02-16T15:55:13</CreationTimeCode>
@@ -44,9 +44,14 @@
                                                     <LuminousHeights c0="10" c90="10" c180="10" c270="10" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="574" faceIndexEnd="607" lightEmittingPartName="LEO0" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="LES0">
+                                                    <LightEmittingObjectReference lightEmittingPartName="LEO0" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="574" faceIndexEnd="607" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>
@@ -83,9 +88,14 @@
                                                     <LuminousHeights c0="10" c90="10" c180="10" c270="10" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="574" faceIndexEnd="607" lightEmittingPartName="LEO1" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="LES1">
+                                                    <LightEmittingObjectReference lightEmittingPartName="LEO1" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="574" faceIndexEnd="607" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>

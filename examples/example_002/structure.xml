@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
     <Header>
         <Name>First example</Name>
         <Description>First ever xml luminaire geometry description</Description>
@@ -67,12 +67,17 @@
                                                                                     <Rectangle sizeX="0.18" sizeY="0.08" />
                                                                                 </LightEmittingObject>
                                                                             </LightEmittingObjects>
-                                                                            <LightEmittingFaceAssignments>
-                                                                                <Assignment faceIndex="16" lightEmittingPartName="leo" />
-                                                                                <Assignment faceIndex="17" lightEmittingPartName="leo" />
-                                                                                <Assignment faceIndex="18" lightEmittingPartName="leo" />
-                                                                                <RangeAssignment faceIndexBegin="19" faceIndexEnd="21" lightEmittingPartName="leo" />
-                                                                            </LightEmittingFaceAssignments>
+                                                                            <LightEmittingSurfaces>
+                                                                                <LightEmittingSurface partName="les">
+                                                                                    <LightEmittingObjectReference lightEmittingPartName="leo" />
+                                                                                    <FaceAssignments>
+                                                                                        <FaceAssignment faceIndex="16" />
+                                                                                        <FaceAssignment faceIndex="17" />
+                                                                                        <FaceAssignment faceIndex="18" />
+                                                                                        <FaceRangeAssignment faceIndexBegin="19" faceIndexEnd="21" />
+                                                                                    </FaceAssignments>
+                                                                                </LightEmittingSurface>
+                                                                            </LightEmittingSurfaces>
                                                                         </Geometry>
                                                                     </Geometries>
                                                                 </Joint>

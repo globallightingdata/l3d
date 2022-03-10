@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/globallightingdata/l3d/develop/xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
     <Header>
         <CreatedWithApplication>Experimental</CreatedWithApplication>
         <CreationTimeCode>2021-01-15T15:55:13</CreationTimeCode>
@@ -41,9 +41,14 @@
                                                     <Circle diameter="0.1" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-0" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="les-0">
+                                                    <LightEmittingObjectReference lightEmittingPartName="leo-0" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>
@@ -77,9 +82,14 @@
                                                     <Circle diameter="0.1" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-1" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="les-1">
+                                                    <LightEmittingObjectReference lightEmittingPartName="leo-1" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>
@@ -113,9 +123,14 @@
                                                     <Circle diameter="0.1" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-2" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="les-2">
+                                                    <LightEmittingObjectReference lightEmittingPartName="leo-2" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>
@@ -149,9 +164,14 @@
                                                     <Circle diameter="0.1" />
                                                 </LightEmittingObject>
                                             </LightEmittingObjects>
-                                            <LightEmittingFaceAssignments>
-                                                <RangeAssignment faceIndexBegin="50" faceIndexEnd="97" lightEmittingPartName="leo-3" />
-                                            </LightEmittingFaceAssignments>
+                                            <LightEmittingSurfaces>
+                                                <LightEmittingSurface partName="les-3">
+                                                    <LightEmittingObjectReference lightEmittingPartName="leo-3" />
+                                                    <FaceAssignments>
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                    </FaceAssignments>
+                                                </LightEmittingSurface>
+                                            </LightEmittingSurfaces>
                                         </Geometry>
                                     </Geometries>
                                 </Joint>
