@@ -56,7 +56,7 @@
                                                                     <Rotation x="0" y="0" z="0" />
                                                                     <ZAxis min="-15" max="15" step="1" />
                                                                     <Geometries>
-                                                                        <Geometry partName="head" excludedFromMeasurement="true">
+                                                                        <Geometry partName="head" includedInMeasurement="false">
                                                                             <Position x="0" y="-0.05" z="-0.525" />
                                                                             <Rotation x="0" y="0" z="0" />
                                                                             <GeometryReference geometryId="head" />
