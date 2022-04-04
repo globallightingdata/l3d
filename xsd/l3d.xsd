@@ -126,7 +126,7 @@
 						</xs:complexType>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="excludedFromMeasurement" type="xs:boolean" />
+				<xs:attribute name="includedInMeasurement" type="xs:boolean" />
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
