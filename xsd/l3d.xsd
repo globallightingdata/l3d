@@ -244,8 +244,13 @@
 	</xs:element>
 	<xs:simpleType name="GeometryUnitsType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="m" />
 			<xs:enumeration value="mm" />
+			<xs:enumeration value="cm" />
+			<xs:enumeration value="dm" />
+			<xs:enumeration value="m" />
+			<xs:enumeration value="inch" />
+			<xs:enumeration value="foot" />
+			<xs:enumeration value="yard" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="GeometryDataType">
