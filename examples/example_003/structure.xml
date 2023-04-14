@@ -3,6 +3,7 @@
     <Header>
         <CreatedWithApplication>Keyboard-v1.0</CreatedWithApplication>
         <CreationTimeCode>2020-12-11T11:12:13</CreationTimeCode>
+		<FormatVersion major="0" minor="11" pre-release="0" />
     </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="luminaire" filename="luminaire.obj" units="mm" />

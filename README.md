@@ -76,6 +76,11 @@ Contains some meta-information about the model and how it has been created.
   If there is a distinct name for this model, this can be mentioned here. May appear once.
 - `Description`
   Some text as model description. May appear once.
+- `FormatVersion`
+  The format version consists out of the following attributes:
+  - major (required) = Major version >= 0
+  - minor (required) = Minor version >= 0
+  - pre-release (optional) = Prerelease version >= 0
 
 ### **`GeometryDefinitions`**
 
@@ -336,10 +341,11 @@ The following example xml creates exactly what we want.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/xsd/l3d/l3d.xsd">
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+    <FormatVersion major="0" minor="11" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
@@ -414,10 +420,11 @@ The xml below contains these adjustments.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/xsd/l3d/l3d.xsd">
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+    <FormatVersion major="0" minor="11" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />

@@ -31,6 +31,47 @@
 						<xs:element name="Description" type="xs:string" minOccurs="0" />
 						<xs:element name="CreatedWithApplication" type="xs:string" minOccurs="1" />
 						<xs:element name="CreationTimeCode" type="xs:dateTime" minOccurs="1" />
+						<xs:element name="FormatVersion" fixed="">
+							<xs:annotation>
+								<xs:documentation>Version of the luminaire data format used for this file. The L3D is versioned according to SemVer 2.0 for major and minor version parts. See semver.org</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="major" use="required">
+											<xs:annotation>
+												<xs:documentation>MAJOR version of the L3D. Will be raised on incompatible changes only (e.g. new required elements, deleted elements, new/changed restrictions)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:int">
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+										<xs:attribute name="minor" use="required">
+											<xs:annotation>
+												<xs:documentation>MINOR version of the L3D.  Will be raised in a backwards compatible manner only</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:int">
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+										<xs:attribute name="pre-release">
+											<xs:annotation>
+												<xs:documentation>Optional pre release version of the L3D</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:int">
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -244,13 +285,13 @@
 	</xs:element>
 	<xs:simpleType name="GeometryUnitsType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="mm" />
-			<xs:enumeration value="cm" />
-			<xs:enumeration value="dm" />
 			<xs:enumeration value="m" />
-			<xs:enumeration value="inch" />
-			<xs:enumeration value="foot" />
+			<xs:enumeration value="dm" />
+			<xs:enumeration value="cm" />
+			<xs:enumeration value="mm" />
 			<xs:enumeration value="yard" />
+			<xs:enumeration value="foot" />
+			<xs:enumeration value="inch" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="GeometryDataType">

@@ -5,6 +5,7 @@
         <Description>First ever xml luminaire geometry description</Description>
         <CreatedWithApplication>Keyboard-v1.0</CreatedWithApplication>
         <CreationTimeCode>2020-12-03T16:33:44</CreationTimeCode>
+		<FormatVersion major="0" minor="11" pre-release="0" />
     </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="base" filename="base.obj" units="mm" />
