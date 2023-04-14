@@ -76,6 +76,11 @@ Contains some meta-information about the model and how it has been created.
   If there is a distinct name for this model, this can be mentioned here. May appear once.
 - `Description`
   Some text as model description. May appear once.
+- `FormatVersion`
+  The format version consists out of the following attributes:
+  - major (required) = Major version >= 0
+  - minor (required) = Minor version >= 0
+  - pre-release (optional) = Prerelease version >= 0
 
 ### **`GeometryDefinitions`**
 
@@ -340,6 +345,7 @@ The following example xml creates exactly what we want.
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+		<FormatVersion major="0" minor="10" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
@@ -418,6 +424,7 @@ The xml below contains these adjustments.
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
+		<FormatVersion major="0" minor="10" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
