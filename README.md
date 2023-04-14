@@ -345,7 +345,7 @@ The following example xml creates exactly what we want.
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
-		<FormatVersion major="0" minor="10" pre-release="0" />
+		<FormatVersion major="0" minor="11" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
@@ -424,7 +424,7 @@ The xml below contains these adjustments.
   <Header>
     <CreatedWithApplication>Example-Tool</CreatedWithApplication>
     <CreationTimeCode>2021-03-03T10:10:10</CreationTimeCode>
-		<FormatVersion major="0" minor="10" pre-release="0" />
+		<FormatVersion major="0" minor="11" pre-release="0" />
   </Header>
   <GeometryDefinitions>
     <GeometryFileDefinition id="cube" filename="cube.obj" units="m" />
