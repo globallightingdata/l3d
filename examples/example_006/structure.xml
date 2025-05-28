@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/xsd/l3d/0.11.0/l3d.xsd">
     <Header>
         <CreatedWithApplication>Experimental</CreatedWithApplication>
         <CreationTimeCode>2021-01-15T15:55:13</CreationTimeCode>
-		<FormatVersion major="0" minor="11" pre-release="0" />
+        <FormatVersion major="0" minor="11" />
     </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="base" filename="base.obj" units="m" />
@@ -46,7 +46,7 @@
                                                 <LightEmittingSurface partName="les-0">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-0" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -87,7 +87,7 @@
                                                 <LightEmittingSurface partName="les-1">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-1" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -128,7 +128,7 @@
                                                 <LightEmittingSurface partName="les-2">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-2" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -169,7 +169,7 @@
                                                 <LightEmittingSurface partName="les-3">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-3" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
