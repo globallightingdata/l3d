@@ -46,7 +46,7 @@
                                                 <LightEmittingSurface partName="les-0">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-0" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -87,7 +87,7 @@
                                                 <LightEmittingSurface partName="les-1">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-1" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -128,7 +128,7 @@
                                                 <LightEmittingSurface partName="les-2">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-2" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
@@ -169,7 +169,7 @@
                                                 <LightEmittingSurface partName="les-3">
                                                     <LightEmittingObjectReference lightEmittingPartName="leo-3" />
                                                     <FaceAssignments>
-                                                        <FaceRangeAssignment groupIndex="1" faceIndexBegin="50" faceIndexEnd="97" />
+                                                        <FaceRangeAssignment faceIndexBegin="50" faceIndexEnd="97" />
                                                     </FaceAssignments>
                                                 </LightEmittingSurface>
                                             </LightEmittingSurfaces>
