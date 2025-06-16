@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/l3d.xsd">
+<Luminaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gldf.io/xsd/l3d/0.11.0/l3d.xsd">
     <Header>
         <CreatedWithApplication>Experimental</CreatedWithApplication>
         <CreationTimeCode>2021-02-16T15:55:13</CreationTimeCode>
-		<FormatVersion major="0" minor="11" pre-release="0" />
+        <FormatVersion major="0" minor="11" />
     </Header>
     <GeometryDefinitions>
         <GeometryFileDefinition id="base" filename="base.obj" units="mm" />
